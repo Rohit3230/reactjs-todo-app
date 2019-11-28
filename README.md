@@ -52,7 +52,32 @@ $ git checkout <step-number>    # eg: git checkout step-1
 
 
 
+***************************************************************
 Main URL:-
 https://github.com/kabirbaidhya/react-todo-app
 Demo:-
 https://simplest-react-todo-app.herokuapp.com/
+***************************************************************
+
+
+***************************************************************
+Steps For Changing Port:-
+1. Setting environment variable
+2. Modifying package.json
+3. Creating .env file
+
+1. On terminal hit commnad :-   export PORT=8000
+    We then restart the development server again with “npm start”.
+        This approach, however, is less preferred for an environment with several active projects. The environment variable PORT is arguably a generic, non-assuming variable name that can be used by other systems. Remember that by setting an environment variable via an export, that variable will be available for the all processes accessing or spawned by the shell. It will be better to localize the port assignment specific to React as shown in the remaining approaches.
+
+2.  Modify in scripts object change start of package.json.
+"scripts": {
+    "start": “PORT=8000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+
+  3. create and .env file on root level.
+    Enter following line:-   PORT=3005
+***************************************************************
